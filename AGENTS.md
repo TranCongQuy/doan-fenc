@@ -145,7 +145,22 @@ doan-fenc/
         └── globals.css
 ```
 
----
+src/components/
+├── The.tsx ← card có tiêu đề + children
+├── NutBam.tsx ← button có biến thể
+├── HopThongBao.tsx ← hộp thông báo (4 loại)
+├── TrangThaiRong.tsx ← empty state
+├── PageLayout.tsx ← layout 3 khe
+├── TruongNhapLieu.tsx ← wrapper input + label + error
+├── Modal.tsx ← ✨ modal cơ bản
+├── ModalXacNhan.tsx ← ✨ modal xác nhận xóa
+├── Toast.tsx ← ✨ 1 toast item
+├── ToastContainer.tsx ← ✨ container nhiều toast
+├── Breadcrumb.tsx ← ✨ điều hướng lùi
+├── Skeleton.tsx ← ✨ loading placeholder
+├── DanhGiaSao.tsx ← ✨ đánh giá 1-5 sao
+├── ChonTags.tsx ← ✨ multi-select tags
+└── BieuDoCot.tsx ← ✨ biểu đồ cột CSS thuần
 
 ## 4. Quy tắc import một chiều
 
@@ -366,7 +381,24 @@ export function TheChuyenDi({ chuyenDi, onChon }: TheChuyenDiProps) {
 const ds = useChuyenDiStore((s) => s.ds);
 ```
 
+### Danh sách stores đầy đủ (v1.1)
+
+| Store              | Khoá localStorage     | State                         | Persist |
+| ------------------ | --------------------- | ----------------------------- | ------- |
+| `useYeuThichStore` | `yeu-thich-chuyen-di` | `daLuu: string[]`             | ✓       |
+| `useToastStore`    | (không)               | `toasts: Toast[]`             | ✗       |
+| `useChuyenDiStore` | `chuyen-di-hue`       | `dsChuyenDi` + CRUD actions   | ✓       |
+| `useDiemDungStore` | `diem-dung-hue`       | `dsDiemDung` + CRUD + reorder | ✓       |
+| `useNhatKyStore`   | `nhat-ky-hue`         | `dsNhatKy` + CRUD             |
+
 ---
+
+### Quy tắc store
+
+- Mỗi store dùng **selector**: `useStore((s) => s.field)`
+- Action luôn cập nhật **immutable**: dùng spread, không `push`/`splice`
+- Store có persist thì thêm `version` để migration sau này
+- Toast store KHÔNG persist (tự xóa sau 3 giây)
 
 ## 9. Quy ước styling
 
@@ -375,6 +407,27 @@ const ds = useChuyenDiStore((s) => s.ds);
 - Class name BEM rút gọn: `the-chuyen-di__tieu-de`, `the-chuyen-di--dang-chon`
 - Dark mode: `[data-theme="dark"]`
 
+### Print CSS (v1.1)
+
+Các trang detail cần in được (chuyến đi, điểm dừng, nhật ký) phải có:
+
+```css
+@media print {
+  .app__header,
+  .app__footer,
+  .nut,
+  .breadcrumb {
+    display: none !important;
+  }
+  .app__main {
+    padding: 0;
+    max-width: none;
+  }
+  .the {
+    border: 1px solid #000;
+    box-shadow: none;
+  }
+}
 ---
 
 ## 10. Quy ước xử lý lỗi
@@ -408,9 +461,11 @@ Format: `<loại>(<phạm-vi>): <mô tả>`
 Ví dụ:
 
 ```
+
 feat(chuyen-di): thêm form tạo chuyến đi mới
 fix(router): sửa lỗi protected route
 docs(prd): cập nhật mục ngoài phạm vi
+
 ```
 
 ### Trước khi push
@@ -525,3 +580,4 @@ Tôi đã đọc, hiểu và đồng ý tuân thủ toàn bộ nội dung file `
 **Người cam kết:** [Họ tên sinh viên]
 **MSSV:** [MSSV]
 **Ngày:** [Ngày ký]
+```
