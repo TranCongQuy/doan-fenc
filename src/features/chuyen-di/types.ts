@@ -7,6 +7,39 @@ export const NHAN_TRANG_THAI: Record<TrangThaiChuyenDi, string> = {
   "da-xong": "Đã xong",
 };
 
+export const TAGS = [
+  "bien",
+  "nui",
+  "am-thuc",
+  "lich-su",
+  "van-hoa",
+  "chua",
+  "lang-tam",
+  "thien-nhien",
+] as const;
+
+export type Tag = (typeof TAGS)[number];
+
+export const NHAN_TAG: Record<Tag, string> = {
+  bien: "🏖 Biển",
+  nui: "⛰ Núi",
+  "am-thuc": "🍜 Ẩm thực",
+  "lich-su": "📜 Lịch sử",
+  "van-hoa": "🎭 Văn hóa",
+  chua: "🛕 Chùa",
+  "lang-tam": "⚱ Lăng tẩm",
+  "thien-nhien": "🌳 Thiên nhiên",
+};
+
+export const SAP_XEP = ["moi-nhat", "ten-az", "luot-xem"] as const;
+export type KieuSapXep = (typeof SAP_XEP)[number];
+
+export const NHAN_SAP_XEP: Record<KieuSapXep, string> = {
+  "moi-nhat": "Mới nhất",
+  "ten-az": "Tên A-Z",
+  "luot-xem": "Nhiều lượt xem",
+};
+
 export interface ChuyenDi {
   id: string;
   ten: string;
@@ -14,6 +47,9 @@ export interface ChuyenDi {
   ngayBatDau: string;
   ngayKetThuc: string;
   trangThai: TrangThaiChuyenDi;
+  tags: string[];
+  luotXem: number;
+  taoLuc: string;
 }
 
 export type TrangThaiTai<T> =

@@ -6,4 +6,6 @@ export interface DiemDung {
   ngay: string;
   thoiGian: string;
   ghiChu: string;
+  danhGia: number;
+  thuTu: number;
 }

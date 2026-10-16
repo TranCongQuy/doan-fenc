@@ -8,6 +8,9 @@ const CHUYEN_DI = [
     ngayBatDau: "2026-10-15",
     ngayKetThuc: "2026-10-16",
     trangThai: "da-xong",
+    tags: ["lich-su", "van-hoa"],
+    luotXem: 42,
+    taoLuc: "2026-10-01T00:00:00.000Z",
   },
   {
     id: "cd02",
@@ -16,6 +19,9 @@ const CHUYEN_DI = [
     ngayBatDau: "2026-11-01",
     ngayKetThuc: "2026-11-01",
     trangThai: "du-dinh",
+    tags: ["thien-nhien", "van-hoa"],
+    luotXem: 18,
+    taoLuc: "2026-10-01T00:00:00.000Z",
   },
   {
     id: "cd03",
@@ -24,6 +30,9 @@ const CHUYEN_DI = [
     ngayBatDau: "2026-10-20",
     ngayKetThuc: "2026-10-20",
     trangThai: "dang-di",
+    tags: ["am-thuc", "van-hoa"],
+    luotXem: 95,
+    taoLuc: "2026-10-05T00:00:00.000Z",
   },
   {
     id: "cd04",
@@ -32,6 +41,9 @@ const CHUYEN_DI = [
     ngayBatDau: "2026-12-01",
     ngayKetThuc: "2026-12-02",
     trangThai: "du-dinh",
+    tags: ["lich-su", "lang-tam"],
+    luotXem: 7,
+    taoLuc: "2026-10-07T00:00:00.000Z",
   },
   {
     id: "cd05",
@@ -40,6 +52,9 @@ const CHUYEN_DI = [
     ngayBatDau: "2026-09-01",
     ngayKetThuc: "2026-09-03",
     trangThai: "da-xong",
+    tags: ["bien", "thien-nhien"],
+    luotXem: 120,
+    taoLuc: "2026-09-01T00:00:00.000Z",
   },
 ];
 
@@ -52,6 +67,8 @@ const DIEM_DUNG = [
     ngay: "2026-10-15",
     thoiGian: "08:00",
     ghiChu: "Nên thuê hướng dẫn viên để hiểu lịch sử.",
+    danhGia: 5,
+    thuTu: 0,
   },
   {
     id: "dd02",
@@ -61,6 +78,8 @@ const DIEM_DUNG = [
     ngay: "2026-10-15",
     thoiGian: "14:00",
     ghiChu: "Đẹp nhất lúc hoàng hôn.",
+    danhGia: 4,
+    thuTu: 1,
   },
   {
     id: "dd03",
@@ -70,6 +89,8 @@ const DIEM_DUNG = [
     ngay: "2026-10-16",
     thoiGian: "09:00",
     ghiChu: "Kiến trúc hài hoà thiên nhiên.",
+    danhGia: 0,
+    thuTu: 2,
   },
   {
     id: "dd04",
@@ -79,6 +100,8 @@ const DIEM_DUNG = [
     ngay: "2026-10-20",
     thoiGian: "18:00",
     ghiChu: "Thử bánh bèo, bánh nậm, bánh lọc.",
+    danhGia: 5,
+    thuTu: 0,
   },
   {
     id: "dd05",
@@ -88,6 +111,8 @@ const DIEM_DUNG = [
     ngay: "2026-10-20",
     thoiGian: "20:00",
     ghiChu: "Bún bò đậm đà, cay nồng.",
+    danhGia: 4,
+    thuTu: 1,
   },
 ];
 

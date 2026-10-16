@@ -11,6 +11,9 @@ export const DS_CHUYEN_DI_FALLBACK: ChuyenDi[] = [
     ngayBatDau: "2026-10-15",
     ngayKetThuc: "2026-10-16",
     trangThai: "da-xong",
+    tags: ["lich-su", "van-hoa"],
+    luotXem: 0,
+    taoLuc: "2026-10-01T00:00:00.000Z",
   },
   {
     id: "cd02",
@@ -19,5 +22,8 @@ export const DS_CHUYEN_DI_FALLBACK: ChuyenDi[] = [
     ngayBatDau: "2026-11-01",
     ngayKetThuc: "2026-11-01",
     trangThai: "du-dinh",
+    tags: ["thien-nhien", "van-hoa"],
+    luotXem: 0,
+    taoLuc: "2026-10-01T00:00:00.000Z",
   },
 ];

@@ -10,11 +10,19 @@ export const diemDungSchema = z.object({
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Ngày theo định dạng YYYY-MM-DD"),
   thoiGian: z.string().regex(/^\d{2}:\d{2}$/, "Thời gian theo định dạng HH:mm"),
   ghiChu: z.string().max(200, "Ghi chú tối đa 200 ký tự").default(""),
+  danhGia: z.number().int().min(0).max(5).default(0),
+  thuTu: z.number().int().min(0).default(0),
 });
 
 export const dsDiemDungSchema = z.array(diemDungSchema);
 
-export const diemDungFormSchema = diemDungSchema.omit({ id: true });
+// Form: bỏ `id`, `chuyenDiId` (FK), `danhGia`, `thuTu` (store tự tính)
+export const diemDungFormSchema = diemDungSchema.omit({
+  id: true,
+  chuyenDiId: true,
+  danhGia: true,
+  thuTu: true,
+});
 
 export type DiemDungForm = z.infer<typeof diemDungFormSchema>;
 export type LoiDiemDung = Partial<Record<keyof DiemDungForm, string[]>>;

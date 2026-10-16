@@ -1,0 +1,40 @@
+:root {
+  --mau-chinh: #0f6e6a;
+  --mau-chinh-dam: #0a4f4c;
+  --mau-phu: #b8860b;
+  --mau-thanh-cong: #2f855a;
+  --mau-loi: #9b2c2c;
+  --mau-canh-bao: #b7791f;
+
+  --mau-nen: #fafaf7;
+  --mau-nen-phu: #ffffff;
+  --mau-vien: #e2e2dc;
+  --mau-chu: #2d2d2d;
+  --mau-chu-phu: #6b6b6b;
+
+  --khoang-1: 4px;
+  --khoang-2: 8px;
+  --khoang-3: 12px;
+  --khoang-4: 16px;
+  --khoang-6: 24px;
+  --khoang-8: 32px;
+  --khoang-12: 48px;
+
+  --ban-kinh: 8px;
+  --ban-kinh-lon: 12px;
+
+  --font-chinh: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bong-nho: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --bong-vua: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --bong-lon: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+  --chuyen-mau: 150ms ease;
+}
+
+[data-theme="dark"] {
+  --mau-nen: #1a1a1a;
+  --mau-nen-phu: #262626;
+  --mau-vien: #3a3a3a;
+  --mau-chu: #e8e8e8;
+  --mau-chu-phu: #a0a0a0;
+}
